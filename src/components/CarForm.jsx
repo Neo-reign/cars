@@ -21,7 +21,7 @@ const CarForm = () => {
   
   const handleSubmit = (e) => { 
     event.preventDefault()
-    dispatch({name: name, cost: cost})
+    dispatch(addCar({name: name, cost: cost}))
   }
   return (
     <div className="car-form panel">
@@ -48,7 +48,7 @@ const CarForm = () => {
           </div>
         </div>
         <div className="field">
-          <button className="button is-link">
+          <button className="Button is-link">
             Submit
           </button>
         </div>

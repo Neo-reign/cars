@@ -4,8 +4,8 @@ import { removeCar } from "../store/Index.js";
 const CarList = () => {
   const dispatch = useDispatch()
   //get the list of Car
-  const cars = useSelector((state) => { 
-    return state.cars.data;
+  const cars = useSelector(({ cars: { data, searchTerm } }) => { 
+    return data.filter((car) => car.name.toLowerCase().includes(searchTerm.toLowerCase()))
   })
   
   const handleCarDelete = ( car ) => { 
